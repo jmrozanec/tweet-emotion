@@ -112,7 +112,7 @@
 
 	var g = svg.append('g');
 
-	d3.json('json/us-states.json', function(error, topology) {
+	d3.json('json/provincias.json', function(error, topology) {
 	    g.selectAll('path')
 			.data(topojson.feature(topology, topology.objects.usStates).features)
 			.enter()
@@ -236,9 +236,12 @@
 
 	function processData(data) {
 		if(!data || !data.place || !data.lang) return; 
-		if(data.place.country_code !== 'US') return;
+		if(data.place.country_code !== 'AR') return;
 		//if(data.lang !== 'en') return;
 
+		displayData(data, positive);
+
+/*
 		if (positiveWords.some(function(v) { return data.text.toLowerCase().indexOf(v) !== -1; })) {
 			displayData(data, positive);
 		} else if (happyWords.some(function(v) { return data.text.toLowerCase().indexOf(v) !== -1; })) {
@@ -254,6 +257,7 @@
 		} else if (sickWords.some(function(v) { return data.text.toLowerCase().indexOf(v) !== -1; })) {
 			displayData(data, sick);
 		}
+*/
 	}
 
 	getData();
