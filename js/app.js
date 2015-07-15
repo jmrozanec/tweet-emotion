@@ -58,36 +58,42 @@
 		icon: 'sick-face.png'
 	};
 
+
 	var positiveWords = [
-		 'excellent', 'amazing', 'beautiful', 'nice', 'marvelous', 'magnificent', 'fabulous', 'astonishing', 'fantastic', 'peaceful', 'fortunate', 
-		 'brilliant', 'glorious', 'cheerful', 'gracious', 'grateful', 'splendid', 'superb', 'honorable', 'thankful', 'inspirational',
-		 'ecstatic', 'victorious', 'virtuous', 'proud', 'wonderful', 'lovely', 'delightful'
+		 'excelente', 'lindo', 'linda', 'bello', 'bella', 'agradable', 'maravilloso', 'maravillosa', 'magnifico', 'fabuloso', 
+		 'sorprendente', 'fantastico', 'tranquilo', 'tranquila', 'tranquilizante', 'afortunado', 'afortunada', 
+		 'brillante', 'glorioso', 'gloriosa', 'alegre', 'amable', 'agradecido', 'agradecida',  'esplendida', 'esplendido', 
+		 'honorable', 'victorioso', 'victoriosa', 'virtuoso', 'victoriosa', 'orgulloso', 'orgullosa', 'maravilloso',
+		 'maravillosa', 'encantador', 'encantadora'
 	];
 	var happyWords = [
-		'happy', 'lucky', 'awesome', 'excited', 'fun', 'amusing', 'amused', 'pleasant', 'pleasing', 'glad', 'enjoy',
-		'jolly', 'delightful', 'joyful', 'joyous', ':-)', ':)', ':-D', ':D', '=)','☺'
+		'feliz', 'afortunado', 'afortunada', 'increible', 'excitante', 'divertido', 'divertida', 'contento', 'contenta', 
+		'alegre', ':-)', ':)', ':-D', ':D', '=)','☺'
 	];
 	var lovelyWords = [
-		'love', 'adore', 'blissful', 'heartfelt', 'loving', 'lovable', 'sweetheart', 'darling', 'kawaii', 'married', 'engaged'
+		'amor', 'amoroso', 'amorosa', 'adoro', 'adora', 'adorable', 'corazon', 'corazoncito', 'querida', 'querido', 'casado', 'casada', 
+		'enganchado', 'enganchada'
 	];
 	var negativeWords = [
-		'unhappy', 'bad', 'sorry', 'annoyed', 'dislike', 'anxious', 'ashamed', 'cranky', 'crap', 'crappy', 'envy', 
-		'awful', 'bored', 'boring', 'bothersome', 'bummed', 'burned', 'chaotic', 'defeated', 'devastated', 'stressed',
-		'disconnected', 'discouraged', 'dishonest', 'doomed', 'dreadful', 'embarrassed', 'evicted', 'freaked out', 'frustrated', 'stupid',
-		'guilty', 'hopeless', 'horrible', 'horrified', 'humiliated', 'ignorant', 'inhumane', 'cruel', 'insane', 'insecure',
-		'nervous', 'offended', 'oppressed', 'overwhelmed', 'pathetic', 'powerless', 'poor', 'resentful', 'robbed', 'screwed'
+		'infeliz', 'malo', 'apenado', 'apenada','confundido', 'confundida', 'disgustado', 'disgustada', 'ansioso', 'ansiosa', 
+		'avergonzado', 'avergonzada', 'basura', 'mierda', 'envidia', 'horrible', 'aburrido', 'aburrida', 'molesto', 'molesta',
+		'desanimado', 'desanimada', 'quemado', 'derrotado', 'derrotada', 'devastado', 'devastada', 'estresado', 'estresada',
+		'desconectado', 'desconectada', 'desalentado', 'desalentada', 'deshonesto', 'deshonesta', 'condenada', 'condenado',
+		'terrible', 'asustado', 'asustada', 'frustrado', 'frustrada','culpable', 'desesperado','horrible','horrorizado',
+		'horrorizada','humillado','humillada','inhumano','cruel','loco','loca','inseguro','insegura','nervioso','nerviosa',
+		'ofendido','ofendida','oprimido','oprimida','abrumado','abrumada','patetico','patetica','impotente','resentido','resentida'
 	];
 	var sadWords = [
-		'sad', 'alone', 'anxious', 'depressed', 'disappointed', 'disappointing', 'sigh', 'sobbing', 'crying', 'cried', 
-		'dumped', 'heartbroken', 'helpless', 'hurt', 'miserable', 'misunderstood', 'suicidal', ':-(', ':(', '=(', ';('
+		'triste', 'solo', 'sola','ansioso','ansiosa', 'ansiedad','deprimido','deprimida', 'decepcionado', 'decepcionada',
+		'suspirante', 'llorando', 'estoy roto','estoy rota', 'herido','herida', 'miserable', 
+		'miseria', ':-(', ':(', '=(', ';('
 	];
 	var angryWords = [
-		'hate', 'damn', 'angry', 'betrayed', 'bitched','disgust', 'disturbed', 'furious', 'harassed', 'hateful', 'hostile', 'insulted',
-		'irritable', 'jealous', ' rage ', 'pissed'
-
+		'odio', 'odia', 'maldita', 'maldito', 'enojado', 'enojada', 'traicionado', 'traicionada', 'asco','perturbado', 'perturbada', 
+		'hostil', 'furioso', 'furiosa', 'hdp', 'estupido', 'estupida','tonto', 'tonta'
 	];
 	var sickWords = [
-		'sick', ' ill ', 'under weather', 'throw up', 'threw up', 'throwing up', 'puke', 'puking', 'pain', 'hangover', 'intoxicated'
+		'enfermo', 'enferma',' vomitar ', 'vomito', 'dolor', 'resaca', 'intoxicado', 'intoxicada'
 	];
 
 
@@ -243,16 +249,10 @@
 
 	function processData(data) {
 		//Twitter country codes available at: http://thephoenixsun.com/about/twitter-country-codes-international-hashtag-abbreviations
-		//console.log(data)
-		if(!data || !data.place || !data.lang) return; 
-		console.log(data.place.country_code);
+		if(!data || !data.place || !data.lang) return;
 		if(data.place.country_code != 'AR') return;
-		console.log(data);
 		//if(data.lang !== 'en') return;
 
-		displayData(data, positive);
-
-/*
 		if (positiveWords.some(function(v) { return data.text.toLowerCase().indexOf(v) !== -1; })) {
 			displayData(data, positive);
 		} else if (happyWords.some(function(v) { return data.text.toLowerCase().indexOf(v) !== -1; })) {
@@ -268,7 +268,6 @@
 		} else if (sickWords.some(function(v) { return data.text.toLowerCase().indexOf(v) !== -1; })) {
 			displayData(data, sick);
 		}
-*/
 	}
 
 	getData();
