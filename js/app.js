@@ -223,6 +223,7 @@
 			
 			document.querySelector('.tweet').style.opacity = 0.9;
 
+console.log(user.state);
 			if(document.querySelector('.'+user.state)) {
 				tally[user.state] = (tally[user.state] || {positive: 0, negative: 0});
 				tally[user.state][emotion.type] = (tally[user.state][emotion.type] || 0) + 1;
