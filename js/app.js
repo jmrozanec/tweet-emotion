@@ -112,7 +112,7 @@
 
 	var g = svg.append('g');
 
-	d3.json('json/provincias.json', function(error, topology) {
+	d3.json('json/argentina-provincias.topojson', function(error, topology) {
 	    g.selectAll('path')
 			.data(topojson.feature(topology, topology.objects.usStates).features)
 			.enter()
