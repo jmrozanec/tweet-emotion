@@ -235,7 +235,7 @@
 	}
 
 	function processData(data) {
-		alert(data)
+		console.log(data)
 		//if(!data || !data.place || !data.lang) return; 
 		//if(data.place.country_code !== 'AR') return;
 		//if(data.lang !== 'en') return;
