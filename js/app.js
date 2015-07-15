@@ -138,7 +138,6 @@
 
 	// fetching previous 100 data, then realtime stream
 	function getData() {
-		/*
 		pubnub.history({
 	    	channel: channel,
 	    	count: 100,
@@ -153,7 +152,6 @@
 	    		}
 	    	}
 	    });
-		*/
 	}
 
 	function getStreamData() {
@@ -240,12 +238,12 @@
 	}
 
 	function processData(data) {
-		console.log(data)
-		//if(!data || !data.place || !data.lang) return; 
-		//if(data.place.country_code !== 'AR') return;
+		//console.log(data)
+		if(!data || !data.place || !data.lang) return; 
+		if(data.place.country_code != 'AR') return;
 		//if(data.lang !== 'en') return;
 
-		//displayData(data, positive);
+		displayData(data, positive);
 
 /*
 		if (positiveWords.some(function(v) { return data.text.toLowerCase().indexOf(v) !== -1; })) {
