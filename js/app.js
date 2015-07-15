@@ -252,9 +252,6 @@
 		if(!data || !data.place || !data.lang) return;
 		if(data.place.country_code != 'AR') return;
 		//if(data.lang !== 'en') return;
-
-console.log(data);
-
 		if (positiveWords.some(function(v) { return data.text.toLowerCase().indexOf(v) !== -1; })) {
 			displayData(data, positive);
 		} else if (happyWords.some(function(v) { return data.text.toLowerCase().indexOf(v) !== -1; })) {
