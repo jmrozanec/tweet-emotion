@@ -246,7 +246,8 @@
 		//console.log(data)
 		if(!data || !data.place || !data.lang) return; 
 		console.log(data.place.country_code);
-		if(data.place.country_code != 'ARG') return;
+		if(data.place.country_code != 'AR') return;
+		console.log(data);
 		//if(data.lang !== 'en') return;
 
 		displayData(data, positive);
