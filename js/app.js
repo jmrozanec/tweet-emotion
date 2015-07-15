@@ -223,7 +223,6 @@
 			
 			document.querySelector('.tweet').style.opacity = 0.9;
 
-console.log(user.state);
 			if(document.querySelector('.'+user.state)) {
 				tally[user.state] = (tally[user.state] || {positive: 0, negative: 0});
 				tally[user.state][emotion.type] = (tally[user.state][emotion.type] || 0) + 1;
@@ -253,6 +252,8 @@ console.log(user.state);
 		if(!data || !data.place || !data.lang) return;
 		if(data.place.country_code != 'AR') return;
 		//if(data.lang !== 'en') return;
+
+console.log(data);
 
 		if (positiveWords.some(function(v) { return data.text.toLowerCase().indexOf(v) !== -1; })) {
 			displayData(data, positive);
