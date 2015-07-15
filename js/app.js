@@ -94,12 +94,13 @@
 	/* D3  */
 
 	var width = 960;
-	var height = 960;
+	var height = 500;
 
-	var projection = d3.geo.mercator()
-		.scale((width + 1) / 2 / Math.PI)
-	    .translate([width / 2, height / 2])
-	    .precision(.1);
+	var projection = d3.geo.transverseMercator()
+		.center([2.5, -38.5])
+        .rotate([66, 0])
+        .scale((height * 56.5) / 33)
+        .translate([(width / 2), (height / 2)]);
 
 	var color = d3.scale.linear()
 		.domain([0, 15])
