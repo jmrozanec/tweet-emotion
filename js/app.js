@@ -2,7 +2,7 @@
 
 	/* UI Components */
 
-	var isRunning = false;//TODO update
+	var isRunning = true;
 	var button = document.getElementById('toggle');
 
 	button.addEventListener('click', function(e){
@@ -137,6 +137,7 @@
 
 	// fetching previous 100 data, then realtime stream
 	function getData() {
+		/*
 		pubnub.history({
 	    	channel: channel,
 	    	count: 100,
@@ -151,6 +152,7 @@
 	    		}
 	    	}
 	    });
+		*/
 	}
 
 	function getStreamData() {
