@@ -93,8 +93,8 @@
 
 	/* D3  */
 
-	var width = 900;
-	var height = 540;
+	var width = 960;
+	var height = 960;
 
 	var projection = d3.geo.mercator()
 		.scale((width + 1) / 2 / Math.PI)
