@@ -96,6 +96,10 @@
 	var width = 960;
 	var height = 500;
 
+	/*
+		Projections can be found at: https://github.com/d3/d3-geo-projection
+		Projection for Argentina: https://gist.github.com/jkutianski/6532516
+	*/
 	var projection = d3.geo.transverseMercator()
 		.center([2.5, -38.5])
         .rotate([66, 0])
@@ -238,9 +242,10 @@
 	}
 
 	function processData(data) {
+		//Twitter country codes available at: http://thephoenixsun.com/about/twitter-country-codes-international-hashtag-abbreviations
 		//console.log(data)
 		if(!data || !data.place || !data.lang) return; 
-		if(data.place.country_code != 'AR') return;
+		if(data.place.country_code != 'ARG') return;
 		//if(data.lang !== 'en') return;
 
 		displayData(data, positive);
