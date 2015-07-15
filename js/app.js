@@ -245,6 +245,7 @@
 		//Twitter country codes available at: http://thephoenixsun.com/about/twitter-country-codes-international-hashtag-abbreviations
 		//console.log(data)
 		if(!data || !data.place || !data.lang) return; 
+		console.log(data.place.country_code);
 		if(data.place.country_code != 'ARG') return;
 		//if(data.lang !== 'en') return;
 
