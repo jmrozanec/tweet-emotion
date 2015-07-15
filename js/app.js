@@ -96,7 +96,7 @@
 	var width = 900;
 	var height = 540;
 
-	var projection = d3.geo.albersUsa();
+	var projection = d3.geo.mercator();
 		//.scale(900);
 
 	var color = d3.scale.linear()
@@ -114,10 +114,10 @@
 
 	d3.json('json/argentina-provincias.topojson', function(error, topology) {
 	    g.selectAll('path')
-			.data(topojson.feature(topology, topology.objects.usStates).features)
+			.data(topojson.feature(topology, topology.objects.provincias).features)
 			.enter()
 			.append('path')
-			.attr('class', function(d){ return 'states ' + d.properties.STATE_ABBR;} )
+			.attr('class', function(d){ return 'states ' + d.properties.id;} )
 			.attr('d', path)
 			.attr('fill', function(d, i) { return color(i); });
 	});
