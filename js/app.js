@@ -96,8 +96,9 @@
 	var width = 900;
 	var height = 540;
 
-	var projection = d3.geo.mercator();
-		//.scale(900);
+	var projection = d3.geo.mercator()
+		.scale(900)
+		.translate([width / 2, height / 2]);
 
 	var color = d3.scale.linear()
 		.domain([0, 15])
