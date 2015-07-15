@@ -251,7 +251,9 @@
 		//Twitter country codes available at: http://thephoenixsun.com/about/twitter-country-codes-international-hashtag-abbreviations
 		if(!data || !data.place || !data.lang) return;
 		if(data.place.country_code != 'AR') return;
+console.log(data.text.toLowerCase())
 		//if(data.lang !== 'en') return;
+
 		if (positiveWords.some(function(v) { return data.text.toLowerCase().indexOf(v) !== -1; })) {
 			displayData(data, positive);
 		} else if (happyWords.some(function(v) { return data.text.toLowerCase().indexOf(v) !== -1; })) {
